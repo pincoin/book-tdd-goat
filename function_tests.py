@@ -35,7 +35,9 @@ class NewVisitorTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_element_by_tag_name('tr')
-        self.assertTrue(any(row.text == '1: 공작새 깃털 구매' for row in rows))
+        self.assertTrue(
+            any(row.text == '1: 공작새 깃털 구매' for row in rows),
+            "New to-do item did not appear in table")
 
         # Edith씨는 추가로 텍스트 박스에 입력을 할 수 있고
         # "플라이 만드는데 공작새 깃털 사용"이라고 입력한다.
